@@ -32,10 +32,16 @@ local coastsCoord={
 {x=1541.6358642578,y=6644.3764648438,z=2.3896576166153},
 {x=-372.31665039063,y=6508.302734375,z=3.4416878223419},
 {x=-2564.0556640625,y=3771.8852539063,z=2.4149557352066},
-{x=-3279.27734375,y=1208.0378417969,z=1.9698642492294}}
+{x=-3279.27734375,y=1208.0378417969,z=1.9698642492294},
+{x=2047.0625,y=3950.125,z=31.628681182861},
+{x=-150.07981872559,y=3913.7775878906,z=31.718894958496},
+{x=-1539.0743408203,y=2668.1765136719,z=1.8724595308304},
+{x=1855.1583251953,y=225.51507568359,z=162.50080871582},
+{x=26.228675842285,y=873.38891601563,z=197.98336791992}}
 
 
 AddEventHandler('esx:onPlayerDeath', function(data)
+    Wait(5000)
     if IsEntityInWater(GetPlayerPed(-1)) then
         local dis = 10000
         local tempdis
@@ -48,7 +54,7 @@ AddEventHandler('esx:onPlayerDeath', function(data)
             end
         end
         ESX.Game.Teleport(GetPlayerPed(-1),nearCoast)
-        ESX.ShowNotification("你被海浪沖到最近的岸邊")
+        ESX.ShowNotification("~y~你被沖到最近的岸邊")
     end
 end)
 
